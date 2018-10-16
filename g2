@@ -1,0 +1,64 @@
+//various markers
+//https://www.w3schools.com/graphics/google_maps_overlays.asp
+
+
+/* ordianry */
+var marker = new google.maps.Marker({position: myCenter});
+
+marker.setMap(map);
+
+/* animated marker */
+var marker = new google.maps.Marker({
+  position:myCenter,
+  animation:google.maps.Animation.BOUNCE
+  });
+
+marker.setMap(map);
+
+/* Icon instead of marker */
+var marker=new google.maps.Marker({
+  position:myCenter,
+  icon:'pinkball.png'
+  });
+
+marker.setMap(map);
+
+/* polyline */
+var myTrip = [stavanger,amsterdam,london];
+var flightPath = new google.maps.Polyline({
+  path:myTrip,
+  strokeColor:"#0000FF",
+  strokeOpacity:0.8,
+  strokeWeight:2
+});
+
+
+/* polygon  */
+var myTrip = [stavanger,amsterdam,london,stavanger];
+var flightPath = new google.maps.Polygon({
+  path:myTrip,
+  strokeColor:"#0000FF",
+  strokeOpacity:0.8,
+  strokeWeight:2,
+  fillColor:"#0000FF",
+  fillOpacity:0.4
+});
+
+
+/*Circle*/
+var myCity = new google.maps.Circle({
+  center:amsterdam,
+  radius:20000,
+  strokeColor:"#0000FF",
+  strokeOpacity:0.8,
+  strokeWeight:2,
+  fillColor:"#0000FF",
+  fillOpacity:0.4
+});
+
+/*Infowindow*/
+var infowindow = new google.maps.InfoWindow({
+  content:"Hello World!"
+  });
+
+infowindow.open(map,marker);
